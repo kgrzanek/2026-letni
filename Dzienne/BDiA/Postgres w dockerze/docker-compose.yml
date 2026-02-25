@@ -1,0 +1,32 @@
+services:
+  bdia-postgres-main:
+    image: postgres:18
+    container_name: bdia-postgres-main
+    restart: unless-stopped
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: bdia
+      PGDATA: /var/lib/postgresql/18/docker
+    ports:
+      - "5501:5432"
+    volumes:
+      - $HOME/.docker-volumes/bdia/postgres-main:/var/lib/postgresql/18/docker
+      - ./db/init:/docker-entrypoint-initdb.d
+
+  bdia-postgres-test:
+    image: postgres:18
+    container_name: bdia-postgres-test
+    restart: unless-stopped
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: bdia
+      PGDATA: /var/lib/postgresql/18/docker
+    ports:
+      - "5502:5432"
+    volumes:
+      - $HOME/.docker-volumes/bdia/postgres-test:/var/lib/postgresql/18/docker
+      - ./db/init:/docker-entrypoint-initdb.d
