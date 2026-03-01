@@ -1,4 +1,4 @@
-package edu.san;
+package edu.san.greeting.boundary;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

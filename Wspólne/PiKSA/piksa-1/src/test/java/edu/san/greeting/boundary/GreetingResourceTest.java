@@ -1,4 +1,4 @@
-package edu.san;
+package edu.san.greeting.boundary;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
