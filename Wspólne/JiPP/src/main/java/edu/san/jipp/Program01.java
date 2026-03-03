@@ -3,11 +3,15 @@ package edu.san.jipp;
 public class Program01 {
 
   public static void main(String[] args) {
-    // Typy proste:
+    // Typy proste (ang. primitive types)
 
-    // 8b 16b 32b 64b 32b 64b
-    // byte <: short <: int <: long <: float <: double
-    // char <: int <: long <: float <: double
+    // 8b      16b      32b     64b     32b      64b
+    // byte <: short <: int  <: long <: float <: double
+    //         char  <: int  <: long <: float <: double
+
+    // S <: T - typ S jest podtypem typu T
+    // S <  T
+    // N : Real := 0.256;
 
     // boolean {true, false}
     // void
@@ -15,9 +19,15 @@ public class Program01 {
     // X : REAL := 0.356;
     // byte < short
 
+    // var h = 127; // TYPE-INFERENCE, wnioskowanie o typach
+
     final byte b = 127;
     final int i = b;
-    System.out.println(i);
+    IO.println(i);
+
+    final int e = 76527365;
+    final byte b2 = (byte) e;
+    IO.println("b2=" + b2);
 
     final var n = 1023;
     final var b1 = (byte) n;
@@ -27,7 +37,7 @@ public class Program01 {
     final var f = 2.26f;
 
     final var d1 = 2.26 + 7;
-    // <d> <d> + <int>
+    //       <d>   <d>  + <int> (faktycznie <double>)
 
     System.out.println(d1);
     System.out.println(f);

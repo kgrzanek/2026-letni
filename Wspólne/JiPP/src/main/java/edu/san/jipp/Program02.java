@@ -11,7 +11,11 @@ public class Program02 {
   }
 
   public static void main(String... args) {
-    // POLIMORFIZM
+    // POLIMORFIZM = WIELOPOSTACIOWOŚĆ, WIELOŚĆ FORM
+    // poli - wielość, różnorodność
+    // morphos - forma, postać
+    // POLIMORFIZM JEST WŁAŚCIWOŚCIĄ PROCEDUR!
+    // JEST TO ZDOLNOŚĆ PROCEDURY DO PRACY Z DANYMI RÓŻNYCH TYPÓW
 
     final var y = 2.25;
     final var n = 2;
