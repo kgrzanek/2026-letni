@@ -22,10 +22,15 @@ public class Program01 {
     // var h = 127; // TYPE-INFERENCE, wnioskowanie o typach
 
     final byte b = 127;
+
+    final byte e1;
+    e1 = 5;
+    IO.println(e1);
+
     final int i = b;
     IO.println(i);
 
-    final int e = 76527365;
+    final int e = 130;
     final byte b2 = (byte) e;
     IO.println("b2=" + b2);
 
