@@ -2,8 +2,8 @@
 package edu.san.jipp.seqs;
 
 import edu.san.jipp.fp.functions.Binary;
-import edu.san.jipp.fp.functions.UnaryPred;
 import edu.san.jipp.fp.functions.Unary;
+import edu.san.jipp.fp.functions.UnaryPred;
 import edu.san.jipp.seqs.impl.LazySeq;
 
 public final class Seqs {
@@ -21,8 +21,8 @@ public final class Seqs {
     if (seq.isNil())
       return ISeq.nil();
 
-    var e1 = seq.first();
-    var fe1 = f.call(e1);
+    final var e1 = seq.first();
+    final var fe1 = f.call(e1);
 
     return LazySeq.of(fe1, () -> map(f, seq.rest()));
   }
@@ -71,7 +71,7 @@ public final class Seqs {
     if (seq.isNil())
       return "()";
 
-    StringBuilder buf = new StringBuilder("(");
+    final var buf = new StringBuilder("(");
     var sep = "";
     for (var s = seq; !s.isNil(); s = s.rest(), sep = ",") {
       buf.append(sep);

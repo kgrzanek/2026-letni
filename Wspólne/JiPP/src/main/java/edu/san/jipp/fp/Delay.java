@@ -7,6 +7,7 @@ import edu.san.jipp.fp.functions.Nullary;
 
 /**
  * Beware! Thread unsafe!
+ *
  * @param <T>
  */
 public final class Delay<T> {
@@ -40,4 +41,3 @@ public final class Delay<T> {
   }
 
 }
-

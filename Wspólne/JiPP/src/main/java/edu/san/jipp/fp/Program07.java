@@ -8,7 +8,7 @@ public class Program07 {
   static int longComputations1(int i) {
     try {
       Thread.sleep(Duration.ofSeconds(2));
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       e.printStackTrace();
     }
     System.out.println("longComputations1 zwraca wartość");
@@ -18,7 +18,7 @@ public class Program07 {
   static int longComputations2(int i, int j) {
     try {
       Thread.sleep(Duration.ofSeconds(3));
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       e.printStackTrace();
     }
     System.out.println("longComputations2 zwraca wartość");
@@ -32,18 +32,18 @@ public class Program07 {
   }
 
   static void computeEagerly() {
-    int n = 4;
-    int m = longComputations1(n);
-    int k = longComputations2(n, m);
-    int j = k + 3;
+    final var n = 4;
+    final var m = longComputations1(n);
+    final var k = longComputations2(n, m);
+    final var j = k + 3;
     System.out.println(j);
   }
 
   static void computeLazily() {
-    var n = Delay.of(() -> 4);
-    var m = Delay.of(() -> longComputations1(n.value()));
-    var k = Delay.of(() -> longComputations2(n.value(), m.value()));
-    var j = Delay.of(() -> k.value() + 3);
+    final var n = Delay.of(() -> 4);
+    final var m = Delay.of(() -> longComputations1(n.value()));
+    final var k = Delay.of(() -> longComputations2(n.value(), m.value()));
+    final var j = Delay.of(() -> k.value() + 3);
 
     System.out.println(j.value());
     System.out.println(k.value());

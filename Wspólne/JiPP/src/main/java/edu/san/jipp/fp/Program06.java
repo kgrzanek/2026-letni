@@ -5,7 +5,7 @@ public class Program06 {
 
   public static void main(String... args) {
 
-    SomeInterface someObject = () -> System.out
+    final SomeInterface someObject = () -> System.out
         .println("Działa someObject::someMethod()");
 
     someObject.someMethod();

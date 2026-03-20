@@ -6,9 +6,9 @@ public class Program {
   static void main() {
     IO.println("Program::main()");
 
-    var canvas = new Canvas();
-    var rectangle  = new Rectangle(5, 4);
-    var triangle = new Triangle(3, 2);
+    final var canvas = new Canvas();
+    final var rectangle = new Rectangle(5, 4);
+    final var triangle = new Triangle(3, 2);
 
     canvas.draw(rectangle);
     canvas.draw(triangle);
