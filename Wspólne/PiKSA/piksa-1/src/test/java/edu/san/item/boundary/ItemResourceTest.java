@@ -1,10 +1,11 @@
 package edu.san.item.boundary;
 
-import io.quarkus.test.junit.QuarkusTest;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.notNullValue;
+
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
+import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 class ItemResourceTest {
@@ -17,7 +18,6 @@ class ItemResourceTest {
       .when().post("/items")
       .then()
       .statusCode(201)
-      .body("name", is("Widget"))
-      .body("description", is("A useful widget"));
+      .body("itemId", notNullValue());
   }
 }

@@ -1,4 +1,4 @@
-(ns fp.core)
+(ns fp.w1)
 
 (+ 1 2 3 4)
 (reduce *' (range 1 5000))
