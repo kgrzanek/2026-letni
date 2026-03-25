@@ -16,9 +16,9 @@
 (+ 9 16)
 25
 
-sum-of-squares
+(identity sum-of-squares)
 (class 3)
-square
+(identity square)
 
 ;; EWALUCJA IF W MODELU PODSTAWIENIOWYM
 ;; (if <predykat>
@@ -48,15 +48,15 @@ square
 
   (/ 1 n))
 
-;; (my-if (zero? n)
-;;   :nie-dziel-przez-0
+(my-if (zero? n)
+  :nie-dziel-przez-0
 
-;;   (/ 1 n))
+  (/ 1 n))
 
 (defn p+ [x y]
   (if (= x 0)
     y
-    (p+ (dec x) (inc y))))
+    (recur #_p+ (dec x) (inc y))))
 
 (p+ 3 4) ;; Jak przebiega ewaluacja tego wyrażenia?
 
@@ -92,6 +92,8 @@ square
 (p+ 0 7)
 7
 
+(p+ 10000000 4)
+
 ;; Q: Od czego zależy czas wykonania p+?
 ;; A: Od wielkości x
 ;; Q: Dlaczego?
@@ -123,17 +125,21 @@ square
 ;; (defn silnia [n]
 ;;   (if (= n 0)
 ;;     1
-;;     (* n (recur (dec n)))))
+;;     (*' n (silnia (dec n)))))
 
-;; (time (silnia 10000 1))
+;; (count (str (silnia 10000 1)))
+
+(time (silnia 10000 1))
 
 (defn fib [n]
   (if (< n 2)
     n
-    (+ (fib (- n 1))
-       (fib (- n 2)))))
+    (+' (fib (- n 1))
+        (fib (- n 2)))))
 
-(time (fib 42))
+(def fib (memoize fib))
+
+(fib 300)
 
 (defn factorial [n]
   (reduce *' (range 1 (inc n))))
@@ -142,3 +148,9 @@ square
 
 (time (last (take 4200 (map first (iterate (fn [[a b]] [b (+' a b)])
                                     [0 1])))))
+
+(->> [0 1]
+     (iterate (fn [[a b]] [b (+' a b)]))
+     (map first)
+     (take 100)
+     last)
