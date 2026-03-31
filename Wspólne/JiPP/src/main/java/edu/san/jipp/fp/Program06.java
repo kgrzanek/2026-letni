@@ -19,7 +19,7 @@ public class Program06 {
     // operatora przypisania). Zamiast tego stosuje się:
     // * if
     // * rekurencję
-    // * lambdy
+    // * lambdy (wyrażenia/formy składniowe, których wartościami są procedury)
     // * symbole definiowane w kodzie programu wraz z ich wartościami
 
   }
