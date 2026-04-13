@@ -18,7 +18,7 @@ public class ItemController {
   }
 
   public Item createItem(String name, String description) {
-    log.log(Level.INFO, "ItemController::createItem()");
+    log.log(Level.DEBUG, "ItemController::createItem()");
     return new Item(UUID.randomUUID(), name, description);
   }
 
