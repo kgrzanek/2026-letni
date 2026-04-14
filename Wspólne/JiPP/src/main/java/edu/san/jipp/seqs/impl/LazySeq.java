@@ -5,6 +5,8 @@ import edu.san.jipp.fp.Delay;
 import edu.san.jipp.fp.functions.Nullary;
 import edu.san.jipp.seqs.ISeq;
 
+// (0 1 1 2 3 5 8 13 21 ...)
+
 public final class LazySeq<T> implements ISeq<T> {
 
   public static <T> LazySeq<T> of(T first, Delay<ISeq<T>> rest) {

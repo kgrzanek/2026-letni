@@ -1,12 +1,16 @@
 // © 2026 Konrad Grzanek <kongra@gmail.com>
 package edu.san.jipp;
 
-public interface IRubin {
+public interface IRubin<T> {
 
-  int adjustVolume(int delta);
+  T adjustVolume(T delta);
 
-  void setChannel(int channel);
+  void setChannel(T channel);
 
-  int adjustBrightness(int delta);
+  T adjustBrightness(T delta);
+
+  default void foo() {
+    IO.println("aaaa" + this);
+  }
 
 }
