@@ -5,6 +5,8 @@ import java.util.function.Supplier;
 
 public final class Invalid extends RuntimeException {
 
+  private static final long serialVersionUID = 1L;
+
   public static Supplier<Invalid> raise(String message, Object what) {
     return () -> new Invalid(message, what);
   }

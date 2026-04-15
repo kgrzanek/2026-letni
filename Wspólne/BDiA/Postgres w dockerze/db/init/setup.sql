@@ -20,3 +20,15 @@ alter default privileges in schema bdia grant all on tables to bdia_owner;
 
 -- set search path
 alter user bdia_owner set search_path to bdia;
+
+-- table used by Proste JDBC examples
+create table bdia.people (
+    id   bigserial    not null primary key,
+    name varchar(100) not null,
+    age  integer      not null
+);
+
+insert into bdia.people (name, age) values
+    ('Anna',  25),
+    ('Bob',   30),
+    ('Carol', 22);

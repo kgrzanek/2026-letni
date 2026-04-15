@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 public final class Ex {
 
-  public static <T> T evalUnchecked(Callable<T> body) {
+  public static <V> V evalUnchecked(Callable<V> body) {
     try {
       return body.call();
     } catch (final Exception e) {
@@ -14,23 +14,22 @@ public final class Ex {
     }
   }
 
-  public static <T> T raise(Throwable t) {
-    sneakyThrow0(t);
-    return null;
+  public static <V> V raise(Throwable t) {
+    return sneakyThrow0(t);
   }
 
-  public static Supplier<RuntimeException> raise(String message) {
+  public static Supplier<RuntimeException> create(String message) {
     return () -> new RuntimeException(message);
   }
 
-  public static Supplier<RuntimeException> raise(
+  public static Supplier<RuntimeException> create(
       Supplier<String> messageSupplier) {
     Objects.requireNonNull(messageSupplier);
     return () -> new RuntimeException(messageSupplier.get());
   }
 
   @SuppressWarnings("unchecked")
-  private static <X extends Throwable> void sneakyThrow0(Throwable t) throws X {
+  private static <V, X extends Throwable> V sneakyThrow0(Throwable t) throws X {
     throw (X) t;
   }
 

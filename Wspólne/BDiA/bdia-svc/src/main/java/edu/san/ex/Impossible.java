@@ -5,11 +5,13 @@ import java.util.function.Supplier;
 
 public final class Impossible extends RuntimeException {
 
-  public static Supplier<Impossible> raise(String message) {
+  private static final long serialVersionUID = 1L;
+
+  public static Supplier<Impossible> create(String message) {
     return () -> new Impossible(message);
   }
 
-  public static Supplier<Impossible> raise(Supplier<String> messageSupplier) {
+  public static Supplier<Impossible> create(Supplier<String> messageSupplier) {
     Objects.requireNonNull(messageSupplier);
     return () -> new Impossible(messageSupplier.get());
   }

@@ -67,10 +67,15 @@ public final class JDBC {
       conn.commit();
       isCommitted = true;
     } finally {
-      if (isCommitted) {
-        conn.setTransactionIsolation(transactionIsolationOriginal);
-        conn.setAutoCommit(autoCommitOriginal);
+      if (!isCommitted) {
+        try {
+          conn.rollback();
+        } catch (final SQLException ex) {
+          LOG.log(Level.ERROR, ex);
+        }
       }
+      conn.setTransactionIsolation(transactionIsolationOriginal);
+      conn.setAutoCommit(autoCommitOriginal);
     }
   }
 
@@ -135,7 +140,9 @@ public final class JDBC {
     final var counter = new Object() {
       int value;
     };
-    withStatement(conn,
+
+    withStatement(
+        conn,
         statement -> counter.value = execUpdate(sql, statement));
 
     return counter.value;
