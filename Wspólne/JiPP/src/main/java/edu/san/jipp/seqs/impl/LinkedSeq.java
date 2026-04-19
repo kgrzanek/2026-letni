@@ -1,5 +1,7 @@
 package edu.san.jipp.seqs.impl;
 
+import java.util.Objects;
+
 import edu.san.jipp.seqs.ISeq;
 
 public final class LinkedSeq<T> implements ISeq<T> {
@@ -10,7 +12,7 @@ public final class LinkedSeq<T> implements ISeq<T> {
 
   LinkedSeq(T first, ISeq<T> rest) {
     this.first = first;
-    this.rest = rest;
+    this.rest = Objects.requireNonNull(rest);
   }
 
   @Override

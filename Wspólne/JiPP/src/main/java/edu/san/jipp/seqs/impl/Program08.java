@@ -3,6 +3,7 @@ package edu.san.jipp.seqs.impl;
 
 import java.util.List;
 
+import edu.san.jipp.fp.functions.Unary;
 import edu.san.jipp.seqs.Seqs;
 
 public class Program08 {
@@ -22,6 +23,9 @@ public class Program08 {
         .map(n -> n * n)
         .reduce((i, j) -> i + j);
     System.out.println(result);
+
+    final Unary<Integer, Integer> inc = n -> n + 1;
+    IO.println(Seqs.iterate(inc, 0).take(10).asString());
 
   }
 

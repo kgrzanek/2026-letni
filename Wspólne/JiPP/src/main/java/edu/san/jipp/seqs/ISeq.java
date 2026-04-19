@@ -31,7 +31,7 @@ public interface ISeq<T> extends Iterable<T> {
     return new Iterator<>() {
       @Override
       public boolean hasNext() {
-        return state.value != Nil.INSTANCE;
+        return state.getValue() != Nil.INSTANCE;
       }
 
       @Override
@@ -39,7 +39,7 @@ public interface ISeq<T> extends Iterable<T> {
         if (!hasNext())
           throw new NoSuchElementException();
         final var value = ISeq.this.first();
-        state.value = ISeq.this.rest();
+        state.setValue(ISeq.this.rest());
         return value;
       }
     };

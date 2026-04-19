@@ -15,6 +15,7 @@ public class ItemController {
 
   public ItemController(Logger log) {
     this.log = log;
+    log.log(Level.INFO, "ItemController()");
   }
 
   public Item createItem(String name, String description) {
