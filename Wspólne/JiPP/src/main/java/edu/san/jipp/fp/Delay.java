@@ -2,8 +2,7 @@
 package edu.san.jipp.fp;
 
 import java.util.Objects;
-
-import edu.san.jipp.fp.functions.Nullary;
+import java.util.function.Supplier;
 
 /**
  * Beware! Thread unsafe!
@@ -12,32 +11,32 @@ import edu.san.jipp.fp.functions.Nullary;
  */
 public final class Delay<T> {
 
-  public static <S> Delay<S> of(Nullary<S> provider) {
-    return new Delay<>(provider);
+  public static <S> Delay<S> of(Supplier<S> supplier) {
+    return new Delay<>(supplier);
   }
 
   public T value() {
     if (isPending()) {
-      value = provider.call();
+      value = supplier.get();
       setNonPending();
     }
     return value;
   }
 
   public boolean isPending() {
-    return null != provider;
+    return null != supplier;
   }
 
   private void setNonPending() {
-    provider = null;
+    supplier = null;
   }
 
-  private Nullary<T> provider;
+  private Supplier<T> supplier;
 
   private T value;
 
-  private Delay(Nullary<T> provider) {
-    this.provider = Objects.requireNonNull(provider);
+  private Delay(Supplier<T> supplier) {
+    this.supplier = Objects.requireNonNull(supplier);
   }
 
 }

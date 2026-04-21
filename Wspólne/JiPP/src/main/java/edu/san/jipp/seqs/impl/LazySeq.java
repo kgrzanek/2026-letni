@@ -1,11 +1,12 @@
 // © 2025 Konrad Grzanek <kongra@gmail.com>
 package edu.san.jipp.seqs.impl;
 
+import java.util.function.Supplier;
+
 import edu.san.jipp.fp.Delay;
-import edu.san.jipp.fp.functions.Nullary;
 import edu.san.jipp.seqs.ISeq;
 
-// (0 1 1 2 3 5 8 13 21 ...)
+// Np. (0 1 1 2 3 5 8 13 21 ...)
 
 public final class LazySeq<T> implements ISeq<T> {
 
@@ -13,7 +14,7 @@ public final class LazySeq<T> implements ISeq<T> {
     return new LazySeq<>(first, rest);
   }
 
-  public static <T> LazySeq<T> of(T first, Nullary<ISeq<T>> rest) {
+  public static <T> LazySeq<T> of(T first, Supplier<ISeq<T>> rest) {
     return of(first, Delay.of(rest));
   }
 

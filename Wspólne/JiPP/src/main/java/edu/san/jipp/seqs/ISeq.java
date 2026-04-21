@@ -31,15 +31,15 @@ public interface ISeq<T> extends Iterable<T> {
     return new Iterator<>() {
       @Override
       public boolean hasNext() {
-        return state.getValue() != Nil.INSTANCE;
+        return !state.getValue().isNil();
       }
 
       @Override
       public T next() {
         if (!hasNext())
           throw new NoSuchElementException();
-        final var value = ISeq.this.first();
-        state.setValue(ISeq.this.rest());
+        final var value = state.getValue().first();
+        state.setValue(state.getValue().rest());
         return value;
       }
     };

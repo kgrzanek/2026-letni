@@ -19,9 +19,9 @@ class Point2DTest {
     assertEquals(4, p2.y());
 
     // identity check
-    final var areIdentical1 = p1 == p1;
+    // final var areIdentical1 = p1 == p1;
     final var areIdentical2 = p1 == p2;
-    assertTrue(areIdentical1);
+    // assertTrue(areIdentical1);
     assertFalse(areIdentical2);
 
     assertTrue(p1.equals(p1));
@@ -44,8 +44,8 @@ class Point2DTest {
     final var p1 = new ColoredPoint2D(Color.RED, 1, 2);
     final var p2 = new ColoredPoint2D(Color.RED, 1, 2);
     final var p3 = new ColoredPoint2D(Color.BLUE, 1, 2);
-    new ColoredPoint2D(Color.RED, 4, 5);
-    new ColoredPoint2D(Color.GREEN, 7, 8);
+    // new ColoredPoint2D(Color.RED, 4, 5);
+    // new ColoredPoint2D(Color.GREEN, 7, 8);
 
     assertTrue(p1.equals(p1));
     assertTrue(p1.equals(p2));

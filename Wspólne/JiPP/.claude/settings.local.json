@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mvn test:*)"
+      "Bash(mvn test:*)",
+      "Bash(mvn -pl . test -Dtest=ISeqTest -q)",
+      "Bash(mvn -pl . test -Dtest=DelayTest -q)"
     ]
   }
 }
