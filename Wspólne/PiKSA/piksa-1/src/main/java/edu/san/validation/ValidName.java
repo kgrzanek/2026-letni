@@ -12,7 +12,8 @@ import jakarta.validation.Payload;
 
 @Documented
 @Constraint(validatedBy = NameValidator.class)
-@Target({ ElementType.FIELD, ElementType.RECORD_COMPONENT, ElementType.PARAMETER })
+@Target({ ElementType.FIELD, ElementType.RECORD_COMPONENT,
+    ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidName {
 

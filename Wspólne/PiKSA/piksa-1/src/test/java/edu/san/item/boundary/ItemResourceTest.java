@@ -13,11 +13,11 @@ class ItemResourceTest {
   @Test
   void testCreateItem() {
     given()
-      .contentType("application/json")
-      .body("{\"name\":\"Widget\",\"description\":\"A useful widget\"}")
-      .when().post("/items")
-      .then()
-      .statusCode(201)
-      .body("itemId", notNullValue());
+        .contentType("application/json")
+        .body("{\"name\":\"Widget\",\"description\":\"A useful widget\"}")
+        .when().post("/items")
+        .then()
+        .statusCode(201)
+        .body("itemId", notNullValue());
   }
 }

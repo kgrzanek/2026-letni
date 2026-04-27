@@ -15,7 +15,7 @@
 (def pi 3.14159)
 (def kwadrat (fn [x] (* x x)))
 
-(defn kwadrat [x] (* x x))
+(defn square [x] (* x x))
 
 (kwadrat 3)
 (map kwadrat (range 10))

@@ -9,6 +9,7 @@ import jakarta.enterprise.context.SessionScoped;
 @SessionScoped
 public class UserSession implements Serializable {
 
+  private static final long serialVersionUID = 1L;
   private final AtomicLong requestCount = new AtomicLong(0);
 
   public long incrementAndGet() {

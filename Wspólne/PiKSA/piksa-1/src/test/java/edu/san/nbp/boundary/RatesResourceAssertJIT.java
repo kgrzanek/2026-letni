@@ -1,8 +1,8 @@
-package edu.san.item.boundary;
+package edu.san.nbp.boundary;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
-class ItemResourceIT extends ItemResourceTest {
+class RatesResourceAssertJIT extends RatesResourceAssertJTest {
   // Execute the same tests but in packaged mode.
 }

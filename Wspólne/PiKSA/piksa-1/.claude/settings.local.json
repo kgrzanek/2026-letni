@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(curl:*)",
-      "Bash(./mvnw test:*)"
+      "Bash(./mvnw test:*)",
+      "WebFetch(domain:static.nbp.pl)",
+      "Bash(jar tf *)",
+      "Bash(xargs -I{} bash -c 'jar tf {} 2>/dev/null | grep -l \"InjectMock\" && echo {}')",
+      "Bash(unzip *)",
+      "Bash(./mvnw test-compile *)"
     ]
   }
 }

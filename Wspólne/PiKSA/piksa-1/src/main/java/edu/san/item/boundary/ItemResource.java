@@ -34,8 +34,8 @@ public class ItemResource {
   @Produces(MediaType.APPLICATION_JSON)
   public Response create(@Valid CreateItemCmd cmd) {
     log.log(Level.DEBUG, "ItemResource::create()");
-    var item = itemController.createItem(cmd.name(), cmd.description());
-    var response = new ItemCreatedResponse(item.id());
+    final var item = itemController.createItem(cmd.name(), cmd.description());
+    final var response = new ItemCreatedResponse(item.id());
     return Response.status(Response.Status.CREATED).entity(response).build();
   }
 }
