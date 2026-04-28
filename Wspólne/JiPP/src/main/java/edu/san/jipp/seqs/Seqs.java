@@ -4,6 +4,7 @@ package edu.san.jipp.seqs;
 import edu.san.jipp.fp.functions.Binary;
 import edu.san.jipp.fp.functions.Unary;
 import edu.san.jipp.fp.functions.UnaryPred;
+import edu.san.jipp.refs.Ref;
 import edu.san.jipp.seqs.impl.LazySeq;
 
 public final class Seqs {
@@ -43,14 +44,14 @@ public final class Seqs {
   // reduce(+, 10, [ ]) =>
   // 10
   public static <S, T> T reduce(Binary<T, S, T> f, T accum, ISeq<S> seq) {
-    for (; !seq.isNil(); seq = seq.rest()) {
-      accum = f.call(accum, seq.first());
-    }
-    return accum;
+    if (seq.isNil())
+      return accum;
+
+    return reduce(f, f.call(accum, seq.first()), seq.rest());
   }
 
   public static <T> ISeq<T> take(int n, ISeq<T> seq) {
-    if (n == 0 || seq.isNil())
+    if (n <= 0 || seq.isNil())
       return ISeq.nil();
 
     return LazySeq.of(seq.first(), () -> take(n - 1, seq.rest()));
@@ -72,11 +73,13 @@ public final class Seqs {
       return "()";
 
     final var buf = new StringBuilder("(");
-    var sep = "";
-    for (var s = seq; !s.isNil(); s = s.rest(), sep = ",") {
-      buf.append(sep);
-      buf.append(s.first());
-    }
+    final var sep = new Ref<>("");
+    seq.forEach(e -> {
+      buf.append(sep.getValue());
+      buf.append(e);
+      sep.setValue(",");
+    });
+
     return buf.append(")").toString();
   }
 

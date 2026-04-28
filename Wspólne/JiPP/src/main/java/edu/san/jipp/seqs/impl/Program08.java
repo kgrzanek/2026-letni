@@ -4,13 +4,14 @@ package edu.san.jipp.seqs.impl;
 import edu.san.jipp.fp.functions.Unary;
 import edu.san.jipp.seqs.Seqs;
 
-public class Program08 {
+class Program08 {
 
-  public static void main(String... args) {
-    Unary<Long, Long> inc = (n) -> n + 1;
-    var naturals = Seqs.iterate(inc, 0L);
-    IO.println(naturals.take(10).asString());
-
+  void main() {
+    final Unary<Long, Long> inc = n -> n + 1;
+    final var naturals = Seqs.iterate(inc, 0L);
+    final var ns3 = naturals.take(3);
+    final var s3 = ns3.asString();
+    IO.println(s3);
 
 //    final var s1 = Seqs.iterate(n -> n + 1, 1)
 //        .map(n -> n * n)
