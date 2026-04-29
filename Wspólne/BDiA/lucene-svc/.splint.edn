@@ -1,0 +1,3 @@
+{naming/lisp-case          {:enabled false}
+ style/def-fn              {:enabled false}
+ lint/prefer-method-values {:enabled false}}

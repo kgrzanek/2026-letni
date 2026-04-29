@@ -1,0 +1,22 @@
+{:paths
+ ["src/main/clj"
+  "resources"]
+
+ :deps
+ {ch.qos.logback/logback-classic           {:mvn/version "1.5.32"}
+  com.github.kongra/telsos-lib             {:local/root "../telsos-lib"}
+  metosin/reitit                           {:mvn/version "0.10.1"}
+  org.apache.lucene/lucene-core            {:mvn/version "10.4.0"}
+  org.apache.lucene/lucene-queryparser     {:mvn/version "10.4.0"}
+  org.apache.lucene/lucene-analysis-common {:mvn/version "10.4.0"}
+  ring/ring-core                           {:mvn/version "1.15.3"}
+  ring/ring-jetty-adapter                  {:mvn/version "1.15.3"}}
+
+ :aliases
+ {:kaocha
+  {:extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
+   :main-opts  ["-m" "kaocha.runner"]}
+
+  :eastwood
+  {:extra-deps {jonase/eastwood {:mvn/version "1.4.3"}}
+   :main-opts  ["-m" "eastwood.lint"]}}}

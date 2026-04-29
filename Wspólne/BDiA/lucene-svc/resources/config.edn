@@ -1,0 +1,2 @@
+{:lucene {:index-base-path "/tmp/lucene-svc-index"}
+ :http   {:port 8181}}
