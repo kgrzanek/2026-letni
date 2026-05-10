@@ -40,13 +40,15 @@ class StdLibTest {
     final var tom = findProfile("tom@altavista.com");
     assertEquals(true, tom.isEmpty());
     assertEquals(false, tom.isPresent());
+
+    IO.println("tom is " + tom);
   }
 
   static Function<Profile, String> emailReader = Profile::email;
 
   static <T, S> Function<? super T, ? extends Optional<? extends S>> liftO(
       Function<? super T, ? extends S> f) {
-    return p -> Optional.of(f.apply(p));
+    return p -> Optional.ofNullable(f.apply(p));
   }
 
   @Test
