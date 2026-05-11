@@ -1,13 +1,14 @@
-// © 2026 Konrad Grzanek <kongra@gmail.com>
 package edu.san.session;
 
+import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.SessionScoped;
 
-// Tymczasowo @ApplicationScoped — @SessionScoped nie działa z RESTEasy Reactive
-@ApplicationScoped
-public class UserSession {
+@SessionScoped
+public class UserSession implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   private final AtomicLong requestCount = new AtomicLong(0);
 

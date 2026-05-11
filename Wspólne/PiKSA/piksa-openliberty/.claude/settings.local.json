@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(./mvnw test *)",
+      "Bash(./mvnw verify *)",
+      "Bash(ab *)",
+      "Bash(./mvnw package *)",
+      "Bash(java -jar /home/kongra/Devel/hot/kgrzanek/Semestry/2026-letni/Wspólne/PiKSA/piksa-1/target/quarkus-app/quarkus-run.jar)",
+      "Bash(curl -s http://localhost:8080/hello)",
+      "Bash(pkill *)",
+      "Bash(./mvnw liberty:stop)",
+      "Bash(git *)"
+    ]
+  }
+}
