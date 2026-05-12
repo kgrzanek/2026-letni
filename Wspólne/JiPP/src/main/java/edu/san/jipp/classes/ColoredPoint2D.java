@@ -19,7 +19,7 @@ public class ColoredPoint2D extends Point2D {
 //  public int hashCode() {
 //    final var prime = 31;
 //    var result = super.hashCode();
-//    return prime * result + (color == null ? 0 : color.hashCode());
+//    return prime * result + color.hashCode();
 //  }
 //
 //  @Override

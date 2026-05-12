@@ -19,9 +19,9 @@ class Point2DTest {
     assertEquals(4, p2.y());
 
     // identity check
-    // final var areIdentical1 = p1 == p1;
+    final var areIdentical1 = p1 == p1;
     final var areIdentical2 = p1 == p2;
-    // assertTrue(areIdentical1);
+    assertTrue(areIdentical1);
     assertFalse(areIdentical2);
 
     assertTrue(p1.equals(p1));
@@ -29,7 +29,7 @@ class Point2DTest {
     assertTrue(p2.equals(p1));
 
     // p2.setX(5);
-    assertTrue(p2.equals(p1));
+    // assertTrue(p2.equals(p1));
   }
 
   @Test
@@ -54,6 +54,8 @@ class Point2DTest {
     final var p6 = new Point2D(1, 2);
     assertTrue(p6.equals(p1));
     assertTrue(p1.equals(p6));
+    // p6 jest typu Point2D, p1 jest typu ColoredPoin2D.
+    // WNOSEK: Nie ma przemienności operatora equals.
 
   }
 
