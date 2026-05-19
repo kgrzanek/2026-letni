@@ -1,0 +1,30 @@
+- Co to jest zmienna?
+- Co to jest typ danych?
+- Jakie znasz proste typy danych w języku Java lub C#?
+- Czy pomiędzy typami prostymi istnieje relacja "jest rodzajem"?
+- Co to jest polimorfizm?
+- Jakie znasz rodzaje polimorfizmu?
+- Czy przeciążanie nazw (overloading) jest odmianą polimorfizmu?
+- Czy niejawna konwersja (type coercion) jest odmianą polimorfizmu?
+- Na czym polega polimorfizm inkluzyjny?
+- Co to jest polimorfizm ad-hoc?
+- Co to jest wczesne i późne wiązanie?
+- Odmianą jakiego polimorfizmu są typy generyczne w języku Java/C#?
+- Co to jest zmienna typowa (type variable)?
+- Co to jest klasa?
+- Co to jest interfejs?
+- Co to jest this?
+- Jakie są cechy programowania obiektowego?
+- Co to jest obiekt?
+- Co to jest konstruktor?
+- Co to jest metoda?
+- Co to jest hermetyzacja?
+- Jakie znasz elementy programowania funkcyjnego w języku Java/C#?
+- Opisz działanie operatorów map i reduce.
+- Na czym polega odroczenie ewaluacji wyrażeń np. w języku Java? Jak się je realizuje?
+- Czy jest możliwe tworzenie nieskończonych kolekcji w programie komputerowym.
+- Czym są funkcje anonimowe (lambda)? Pokaż przykład w wybranym języku programowania.
+- Jakie zasady obowiązują przy przesłanianiu operatora equals w języku Java?
+- Co można powiedzieć o metodzie hashCode w języku Java?
+- Co to są tzw. sealed types w języku Java?
+- record types w Javie
