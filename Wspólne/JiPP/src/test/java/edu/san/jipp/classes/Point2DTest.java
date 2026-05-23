@@ -2,11 +2,31 @@ package edu.san.jipp.classes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
 class Point2DTest {
+
+  @Test
+  void testDoubles() {
+    var x = 1.1;
+    var y = 0.2;
+    var z = x - y;
+    assertNotEquals(0.9, z);
+  }
+
+  @Test
+  void testPoint2DIdentity() {
+    var o1 = new Point2D(1, 2);
+    var o2 = new Point2D(3, 4);
+    var o3 = new Point2D(1, 2);
+
+    IO.println(o1 == o1); // true
+    IO.println(o1 == o2); // false
+    IO.println(o1 == o3); // false
+  }
 
   @Test
   void testPoint2D() {

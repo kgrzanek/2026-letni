@@ -92,6 +92,7 @@ class RatesResourceAssertJTest {
     assertThat(response.statusCode()).isEqualTo(503);
   }
 
+  @SuppressWarnings("static-method")
   private HttpResponse<String> get(URI uri) throws Exception {
     try (var client = HttpClient.newHttpClient()) {
       final var request = HttpRequest.newBuilder(uri).GET().build();

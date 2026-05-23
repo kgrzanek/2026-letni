@@ -1,0 +1,11 @@
+* Co to są i do czego się wykorzystuje
+  Krótko, po 5-6 zdań. Z listy poniższej wybiorę na zaliczenie 2 punkty
+** Diagramy przypadków użycia
+** Diagramy aktywności (czynności)
+** Diagramy stanów
+** Diagramy interakcji/sekwencji
+** Diagramy klas
+** Diagramy komponentów
+** Diagramy wdrożenia (deployment diagrams)
+
+* Opisz swoje ulubione środowisko programowania lub środowisko AI

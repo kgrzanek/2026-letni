@@ -51,7 +51,7 @@ public class NbpFetcher {
     return Optional.empty();
   }
 
-  private RatesTable parse(byte[] bytes) throws Exception {
+  private static RatesTable parse(byte[] bytes) throws Exception {
     final var factory = DocumentBuilderFactory.newInstance();
     final var builder = factory.newDocumentBuilder();
     // JAXP odczyta encoding="ISO-8859-2" z deklaracji XML automatycznie
@@ -75,12 +75,13 @@ public class NbpFetcher {
           case "kod_waluty"   -> code = child.getTextContent();
           case "przelicznik"  -> multiplier = Integer.parseInt(child.getTextContent().trim());
           case "kurs_sredni"  -> midRateStr = child.getTextContent().replace(',', '.');
+          default -> throw new IllegalArgumentException("Unexpected value: " + child.getNodeName());
         }
       }
       if (code != null && name != null && midRateStr != null) {
         rates.add(new ExchangeRate(code, name, multiplier, new BigDecimal(midRateStr)));
       }
     }
-    return new RatesTable(tableNumber, publicationDate, List.copyOf(rates));
+    return new RatesTable(tableNumber, publicationDate, rates);
   }
 }
