@@ -48,10 +48,10 @@
 
   (/ 1 n))
 
-(my-if (zero? n)
-  :nie-dziel-przez-0
+#_(my-if (zero? n)
+         :nie-dziel-przez-0
 
-  (/ 1 n))
+         (/ 1 n))
 
 (defn p+ [x y]
   (if (= x 0)
