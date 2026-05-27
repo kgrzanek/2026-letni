@@ -1,0 +1,26 @@
+* Stacjonarne
+** 17 czerwca (środa) aula A3, 9.00-10.30
+  - Języki i paradygmaty programowania 4 sem.
+
+** 17 czerwca (środa) K1/K3, 11.00-13.30
+  - PiKSA 4 sem.
+  - Programowanie funkcyjne 4 sem.
+
+** 17 czerwca (środa) K1/K3 14.00-16.30
+  - BDiA 6 sem.
+  - JEE  6 sem.
+
+* Niestacjonarne
+** 27 czerwca (sobota) K1/K3 8.00-10.30
+  - BDiA 6 sem.
+  - JEE  6 sem.
+
+** 27 czerwca (sobota) K1/K3 10.30-13.00
+  - PiKSA 4 sem.
+  - Programowanie funkcyjne 4 sem.
+
+** 27 czerwca (sobota) aula A3 13.30 - 15.00
+  - Języki i paradygmaty programowania 4 sem.
+
+** 27 czerwca (sobota) aula A3 13.30 - 15.00
+  - Wybrane środowiska programowania
