@@ -1,0 +1,9 @@
+- Dependency inversion i dependency injection w wybranej technologii
+- Co to jest event-driven architecture?
+- Co to jest event-sourcing?
+- Co to jest CQRS?
+- Co to są agregaty?
+- Dlaczego odddzielanie logiki biznesowej od bibliotek/frameworków jest korzystne?
+- Co to jest eventual consistency?
+- Jakie elementy wybranej przez Ciebie technologii `enterprise` (JEE, .NET) służą do
+  osiągania wysokiej jakości tworzonego systemu?
