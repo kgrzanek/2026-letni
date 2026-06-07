@@ -4,7 +4,7 @@ class B extends A {
 
   @Override
   void saySomething() {
-    System.out.println("B says: B");
+    IO.println("B says: B");
   }
 
 }

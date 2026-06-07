@@ -19,8 +19,7 @@ public final class Seqs {
   // @returns [T]
   // map(f, [e1, e2, e3, ...]) => [f(e1), f(e2), f(e3), ...]
   public static <S, T> ISeq<T> map(Unary<S, T> f, ISeq<S> seq) {
-    return seq.isNil() ?
-        ISeq.nil()
+    return seq.isNil() ? ISeq.nil()
         : LazySeq.of(f.call(seq.first()), () -> map(f, seq.rest()));
   }
 

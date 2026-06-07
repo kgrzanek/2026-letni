@@ -19,11 +19,11 @@ public class Fib {
     final var fib10 = fib.take(10);
     IO.println(fib10.asString());
 
-    var sum = fib
+    final var sum = fib
         .filter(n -> n % 2 == 0)
         .take(10)
-        // .reduce((accum, n) -> accum + n, 0L)
-        ;
+    // .reduce((accum, n) -> accum + n, 0L)
+    ;
 
     IO.println(sum.asString());
 

@@ -14,7 +14,8 @@ public class Program05 {
 //    var someObject = new SomeClass();
 //    someObject.someMethod();
 
-    final var someObject = (SomeInterface) () -> System.out.println("Działa someObject::someMethod()");
+    final var someObject = (SomeInterface) () -> System.out
+        .println("Działa someObject::someMethod()");
     someObject.someMethod();
     System.out.println(someObject.getClass());
 

@@ -21,11 +21,9 @@ public final class Point {
   public boolean equals(Object obj) {
     if (this == obj)
       return true;
-    if (obj == null)
+    if (obj == null || getClass() != obj.getClass())
       return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Point other = (Point) obj;
+    final var other = (Point) obj;
     return Double.doubleToLongBits(x) == Double.doubleToLongBits(other.x)
         && Double.doubleToLongBits(y) == Double.doubleToLongBits(other.y);
   }

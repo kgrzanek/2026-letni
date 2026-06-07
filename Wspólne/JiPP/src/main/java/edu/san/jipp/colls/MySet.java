@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class MySet<T> { // T - zmienna "typowa" (ang. type-variable)
 
-  private T[] elements;
+  private final T[] elements;
 
   private int size;
 
@@ -14,7 +14,7 @@ public class MySet<T> { // T - zmienna "typowa" (ang. type-variable)
       throw new IllegalArgumentException();
 
     @SuppressWarnings("unchecked")
-    var elems = (T[]) new Object[maxSize];
+    final var elems = (T[]) new Object[maxSize];
     elements = elems;
   }
 
@@ -57,10 +57,10 @@ public class MySet<T> { // T - zmienna "typowa" (ang. type-variable)
 
   @Override
   public String toString() {
-    var s = new StringBuilder("#{");
+    final var s = new StringBuilder("#{");
     for (int i = 0, n = getSize(); i < n; i++) {
       s.append(elements[i]);
-      if (i != n-1) {
+      if (i != n - 1) {
         s.append(",");
       }
     }

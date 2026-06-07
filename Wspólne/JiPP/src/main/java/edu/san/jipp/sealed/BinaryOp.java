@@ -5,10 +5,10 @@ public sealed interface BinaryOp {
 
   default double eval(double x, double y) {
     return switch (this) {
-      case Add _ -> x + y;
-      case Sub _ -> x - y;
-      case Mul _ -> x * y;
-      case Div _ -> x / y;
+      case final Add _ -> x + y;
+      case final Sub _ -> x - y;
+      case final Mul _ -> x * y;
+      case final Div _ -> x / y;
     };
   }
 

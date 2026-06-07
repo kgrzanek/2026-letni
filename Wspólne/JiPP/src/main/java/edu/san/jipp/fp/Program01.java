@@ -10,7 +10,10 @@ public class Program01 {
     return result;
   }
 
-  static long factorial2(final int n, final long result) { // n, result - zmienne stanu (ang. state-variables)
+  static long factorial2(final int n, final long result) { // n, result -
+                                                           // zmienne stanu
+                                                           // (ang.
+                                                           // state-variables)
     IO.println(n + ", " + result);
     return n == 0 ? result : factorial2(n - 1, n * result);
   }

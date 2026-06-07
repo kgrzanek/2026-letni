@@ -3,20 +3,18 @@ package edu.san.jipp.records;
 
 class TestRecords {
 
-  interface SomeI {
+  interface SomeInterface {
 
     String name();
 
     int age();
   }
 
-  SomeI getMy() {
-    record TmpRecord (int age, String name) implements SomeI {}
+  SomeInterface getMy() {
+    record TmpRecord(int age, String name) implements SomeInterface {}
     return new TmpRecord(27, "Tom");
   }
 
-  void main() {
-    record TmpRecord (int n, String s) {}
-  }
+  void main() {}
 
 }

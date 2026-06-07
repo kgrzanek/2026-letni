@@ -1,3 +1,7 @@
+* UWAGA!
+  Wszystkie poniższe terminy dotyczą WYŁĄCZNIE Łodzi. Terminy zaliczeń w Warszawie
+  zostaną przekazane osobno.
+
 * Stacjonarne
 ** 17 czerwca (środa) aula A3, 9.00-10.30
   - Języki i paradygmaty programowania 4 sem.

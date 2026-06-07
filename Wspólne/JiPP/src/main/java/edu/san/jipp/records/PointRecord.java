@@ -3,9 +3,9 @@ package edu.san.jipp.records;
 
 public record PointRecord(double x, double y) {
 
-  @Override
-  public int hashCode() {
-    return 31 * Double.hashCode(x()) + Double.hashCode(y());
+  public PointRecord {
+    if (Double.isNaN(x))
+      throw new IllegalArgumentException();
   }
 
 }

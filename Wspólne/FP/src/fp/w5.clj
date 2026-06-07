@@ -9,12 +9,18 @@
 (println (quote y))
 (println "y")
 
+;; Tato, a Marcin powiedział: "Warszawa jest stolicą USA"
+
 (class "y")
 (class (quote y))
+
+(list (quote +) (quote x) 5)
 
 (eval (list (quote +) (quote x) 5))
 
 (eval (list '+ 'x 5))
+
+(identity '(+ x 5))
 
 ;; RÓŻNICZKOWANIE SYMBOLICZNE
 (defn atom?
@@ -109,4 +115,7 @@
 
 (identity e1)
 
-(deriv e1 'y)
+(deriv e1 'x)
+
+(when-let [x nil]
+  (* x 6))
